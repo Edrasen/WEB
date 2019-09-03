@@ -16,3 +16,4 @@ function validar(usr, pass){
 		alert("Datos incorrectos")
 	}
 }
+document.getElementById("boton").addEventListener("click", myfunction);
