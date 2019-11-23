@@ -1,0 +1,10 @@
+->>>usuario admin | mortal
+
+
+--> envioprogramado (Problema servidor)
+
+--> envio (smtp)
+
+--> postal
+
+--> catPost
