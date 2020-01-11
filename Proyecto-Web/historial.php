@@ -1,7 +1,7 @@
 <?php
 
 include_once 'inc/Tools.php';
-include_once 'inc/envio.php';
+include_once 'inc/Envio.php';
 $connect = new Tools();
 $conexion = $connect->connectDB();
 session_start();
