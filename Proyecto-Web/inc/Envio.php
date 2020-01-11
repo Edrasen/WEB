@@ -138,5 +138,25 @@ function postal($id){
         return $dirPostal;
 }
 
+function name($id){
+    include_once 'Tools.php';
+    $connect = new Tools();
+    $conn = $connect->connectDB();
+
+    $emailD = "SELECT * FROM envio WHERE idEnvio = '$id'";
+    $resemD = mysqli_query($conn, $emailD);
+    mysqli_num_rows($resemD);
+    $rows = $resemD->fetch_assoc();
+    $idDes = $rows["idDestinatario"];
+
+    $nmD = "SELECT * FROM usuario WHERE idUser = '$idDes'";
+    $resnmD = mysqli_query($conn, $nmD);
+    mysqli_num_rows($resnmD);
+    $rows2 = $resnmD->fetch_assoc();
+    $nmDes = $rows2["nombre"] . " " .$rows2["primerAp"];    
+
+    return $nmDes;
+}
+
 
 
