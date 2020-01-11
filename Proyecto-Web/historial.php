@@ -1,6 +1,7 @@
 <?php
 
 include_once 'inc/Tools.php';
+include_once 'inc/envio.php';
 $connect = new Tools();
 $conexion = $connect->connectDB();
 session_start();
@@ -51,10 +52,10 @@ if (!empty($_SESSION['NombreUsuario'])) {
 
                         <thead class="white-text black">
                             <tr>
-                                <th>emailDestinatario</th>
+                                <th>Destinatario</th>
                                 <th>Asunto</th>
                                 <th>Mensaje</th>
-                                <th><br><br>Postal<br><br><br></th>
+                                <th>Postal</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -67,10 +68,16 @@ if (!empty($_SESSION['NombreUsuario'])) {
 
                             while ($mostrar = mysqli_fetch_array($result)) { ?>
                                 <tr>
-                                    <td><?php echo $mostrar['emailDestinatario'] ?></td>
+                                    <td>
+                                    <?php echo $name = name($mostrar['idEnvio']) ?>
+                                    <br>
+                                    <br>
+                                    <?php echo $mostrar['emailDestinatario'] ?>
+                                    </td>
                                     <td><?php echo $mostrar['saludo'] ?></td>
                                     <td><?php echo $mostrar['mensaje'] ?></td>
                                     <td><img id="dirPostal" src="<?php echo $mostrar['dirPostal'] ?>" alt="" style="height:150px; width:220px;" /></td>
+                                </tr>
                             <?php
                             } ?>
                         </tbody>
