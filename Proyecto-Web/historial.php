@@ -69,7 +69,7 @@ if (!empty($_SESSION['NombreUsuario'])) {
                             while ($mostrar = mysqli_fetch_array($result)) { ?>
                                 <tr>
                                     <td>
-                                    <?php echo $name = name($mostrar['idEnvio']) ?>
+                                    <b><?php echo $name = name($mostrar['idEnvio'])?></b>
                                     <br>
                                     <br>
                                     <?php echo $mostrar['emailDestinatario'] ?>
